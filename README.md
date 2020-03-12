@@ -31,6 +31,6 @@ docker-compose down
 ```
 to tell Docker to remove the containers we've created in #3 that are defined in docker-compose.yml.
 
-![image info](./model.png)
+![image info](./model1.png)
 
 ![image info](./page.png)
