@@ -25,10 +25,13 @@ services:
   #     - "27017:27017"
 
   api:
-    build: ./api #this tells docker where to look for the Dockerfile to build the image
-    container_name: api #name of your container and also the DNS name (nginx will proxy pass to this container from localhost:8000 when using a browser or Postman)
+    #this tells docker where to look for the Dockerfile to build the image
+    build: ./api 
+    #name of your container and also the DNS name (nginx will proxy pass to this container from localhost:8000 when using a browser or Postman)
+    container_name: api 
     restart: always
-    expose: #EXPOSE defines the ports reachable from INSIDE your docker network
+    #EXPOSE defines the ports reachable from INSIDE your docker network
+    expose: 
       - 8000
 
   frontend:
@@ -42,6 +45,7 @@ services:
     build: ./nginx
     container_name: nginx
     restart: always
-    ports: #PORTS defines ports reachable from the outside world, like a browser or other clients
+    #PORTS defines ports reachable from the outside world, like a browser or other clients
+    ports: 
       - "8000:8000"
-      - "8001:80"
+      - "8001:8001"
